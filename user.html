@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BarberApp</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e1493c9ba5.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="user.css">
+    <script src="script.js"></script>
+    <script src="content.js"></script>
+
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFlOKR1gNmS5gsyI6ha3j_IdL7WG9wxK4">
+    </script>
+
+</head>
+<body>
+    
+    <header>
+        
+        <div>
+            <div class="container-close">
+                <div class="title">
+                    <i class="fas fa-cut"></i>
+                    <a href="mhw1.html" class="">BarberApp</a>
+                </div>
+
+                <div class="close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            
+            
+            
+            <div class="title">
+                <i class="fas fa-user"></i>
+                <p>Ciao, Matteo Busacca</p>
+            </div>
+    
+            <div class="menu">
+                <div class="">
+                    <i class="fas fa-info-circle"></i>
+                    <a>Informazioni personali</a>
+                </div>
+                <div class="">
+                    <i class="fas fa-shopping-cart"></i>
+                    <a>Prenotazioni</a>
+                </div>
+                <div class="sel">
+                    <i class="fas fa-star"></i>
+                    <a>Saloni</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="body" id="body_saloni">
+        <div class="header_mobile">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <div class="all">
+            <div class="title">
+                <h1>Tutti i Saloni</h1>
+                <div class="search">
+                    <i class="fas fa-search"></i>
+                    <input type="text">
+                </div>
+                <div class="geolocation-search">
+                    <div>
+                        <i class="fas fa-map-pin"></i>
+                        <p>Cerca quelli vicino a te</p>
+                    </div>
+                    <i class="fas fa-times hidden"></i>
+                </div>
+            </div>
+            
+            <div class="body_all_saloni">
+
+                <template id="template_allSaloni">
+                    <div class="div_salone" data-id="">
+                        <div class="container">
+                            <div class="overlay" id="title">
+                                <p class="nome_salone" id="nome_salone"></p>
+                                <div class="separator"></div>
+                                <p class="button-desc" id="click_dettagli">Dettagli</p>
+                            </div>
+                
+                            <div class="overlay hidden" id="desc">
+                                <p class="nome_salone"></p>
+                                <div class="separator"></div>
+                                <div class="desc">
+                                    <div>
+                                        <p>Città:</p>
+                                        <p id="citta"></p>
+                                    </div>
+                                    <div>
+                                        <p>Indirizzo:</p>
+                                        <p id="indirizzo"></p>
+                                    </div>
+                                    <div>
+                                        <p>Mappa:</p>
+                                        <p data-address="" id="mappa">Clicca qui</p>
+                                    </div>
+                                    <div>
+                                        <p>Sesso:</p>
+                                        <p id="sesso"></p>
+                                    </div>
+                                    <div>
+                                        <p>Servizi:</p>
+                                        <p id="servizi"></p>
+                                    </div>
+                                    <div>
+                                        <p>Condividi:</p>
+                                        <p id="qrCode">Qr Code</p>
+                                    </div>
+                
+                                    <div class="container-separator">
+                                        <div class="separator"></div>
+                                    </div>
+                
+                                    <p class="button-desc" id="click_nascondi_dettagli">Nascondi dettagli</p>
+                                </div>
+                            </div>
+
+                            <i data-preferito="false" data-id="" class="far fa-star preferito"></i>
+                        </div>
+                    </div>
+                </template>
+
+            </div>
+        </div>
+
+        <div class="preferiti">
+            <div class="title">
+                <h1>Preferiti</h1>
+            </div>
+
+            <div class="body_preferiti">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="maps_overlay" class="hidden overlay_div">
+        <div>
+            
+        </div>
+        <i class="far fa-times-circle"></i>
+    </div>
+
+    <div id="qrCode_overlay" class="overlay_div hidden"> 
+        <img src="" alt="">
+        <i class="far fa-times-circle"></i>
+    </div>
+
+</body>
+
+</html>

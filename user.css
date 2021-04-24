@@ -1,0 +1,462 @@
+html{
+    --primary-color: black;
+    --secondary-color: rgb(248, 179, 35);
+    scroll-behavior: smooth;
+    --border-radius : 15px;
+}
+
+body{
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    display: flex;
+}
+
+a:active,
+a:link,
+a:visited{
+    text-decoration: none;
+}
+
+header > div{
+    height: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body::-webkit-scrollbar,
+body div::-webkit-scrollbar,
+body p::-webkit-scrollbar {
+    display: none !important;
+  }
+
+header{
+    background-color: rgba(0, 0, 0, .9);
+    width: 25%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header .title{
+    color: var(--secondary-color);
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 25%;
+}
+
+header .menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 75%;
+    color: white;
+    font-weight: lighter;
+    width: 75%;
+}
+
+.menu > div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.body{
+    width: 75%;
+    height: 100vh;
+    padding-left: 1%;
+    padding-right: 1%;
+    max-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.body > div{
+    width: 100%;
+}
+
+.all .title,
+.preferiti .title{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.div_salone .preferito{
+    position: absolute;
+    z-index: 1;
+    color: white;
+    top: 0;
+    right: 0;
+    padding: 5%;
+    cursor: pointer;
+}
+
+.div_salone .preferito[data-preferito='true']{
+    color: var(--secondary-color);
+}
+
+.all .title h1,
+.preferiti .title h1{
+    font-weight: bold;
+    font-size: x-large;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, .4);
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search > i{
+    margin-right: 5%;
+}
+
+.search input{
+    border-width: 0;
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: var(--border-radius);
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.search input:focus{
+    border-radius: var(--border-radius);
+    border-width: 0;
+    background-color: black;
+    color: var(--secondary-color);
+    outline: none;
+}
+
+.body > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.body_all_saloni,
+.body_preferiti{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    overflow-x: scroll;
+}
+
+.body_all_saloni > div,
+.body_preferiti > div {
+    margin-right: 2%;
+}
+
+.div_salone{
+    height: 55vh;
+    max-height: 55vh;
+    width: 30%;
+    max-width: 30%;
+    min-width: 30%;
+    flex: 1 1 auto;
+    overflow: hidden;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: var(--border-radius);
+    padding: 5px;
+    position: relative;
+    background-size: cover;
+}
+
+.container-close{
+    font-size: large;
+}
+
+.div_salone .overlay{
+    position: absolute;
+    background-color: rgba(0, 0, 0, .6);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-size: medium;
+}
+
+.menu .sel{
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.overlay #click_dettagli, 
+.overlay #click_nascondi_dettagli{
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-self: center;
+    border-bottom: 1px solid var(--secondary-color);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    padding: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    font-size: small;
+    text-transform: uppercase;
+}
+
+.overlay #click_dettagli:hover, 
+.overlay #click_nascondi_dettagli:hover{
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-color);
+    color: black;
+}
+
+.separator{
+    width: 50%;
+    height: 1px;
+    border-bottom: 1px solid white;
+}
+
+.container-separator{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.separator:first-of-type{
+    margin-bottom: 5%;
+}
+
+.separator:last-of-type{
+    margin-top: 5%;
+}
+
+.hidden{
+    display: none !important;
+}
+
+.nome_salone{
+    font-weight: bold;
+    font-size: large;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+}
+
+.overlay .desc{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    width: 100%;
+    text-transform: capitalize;
+}
+
+.desc > div{
+    max-width: 100%;
+    display: flex;
+}
+
+.desc > div > p{
+    font-size: small;
+    margin: 0 !important;
+    margin-top: 0.5em !important;
+}
+
+.desc > div > p:last-of-type{
+    margin-left: 5px !important;
+    font-weight: bold;
+    overflow: scroll;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+}
+
+header .close{
+    display: none;
+    color: white;
+}
+
+.header_mobile{
+    display: none !important;
+}
+
+.container-close{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+.container-close .title{
+    display: flex;
+    flex-direction: row;
+}
+
+.container-close .title a{
+    margin-left: 10px;
+    color: var(--secondary-color);
+}
+
+.overlay_div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .4);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+}
+
+.overlay_div > div{
+    background-color: white;
+    border-radius: var(--border-radius);
+    width: 80%;
+    height: 80%;
+    position: relative;
+}
+
+.overlay_div > i{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    cursor: pointer;
+    z-index: 3;
+    font-size: x-large;
+}
+
+#mappa{
+    cursor: pointer;
+    text-decoration: underline;
+    margin-bottom: 2%;
+}
+
+.geolocation-search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-color);
+    cursor: pointer;
+    flex-direction: row;
+}
+
+.geolocation-search > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.geolocation-search p{
+    padding-left: 10px;
+}
+
+.geolocation-search i{
+    margin-left: 20px;
+}
+
+#qrCode{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#qrCode_overlay > img{
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .8);
+    height: 30vh;
+    width: 30vh;
+}
+
+@media (max-width: 500px){
+    .container-close{
+        font-size: large;
+    }
+
+    header{
+        display: none;
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        background-color: rgba(0, 0, 0, .95);
+    }
+
+    header .close{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .body{
+        width: 100vw;
+        padding: 0;
+        margin: 0;
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+
+    .div_salone{
+        width: 80% !important;
+        max-width: 80%;
+        min-width: 80%;
+    }
+
+    .header_mobile{
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: flex-end;
+        align-items: flex-end;
+        width: 100%;
+    }
+
+    .all > .title{
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .all input{
+        width: 70%;
+    }
+
+}
